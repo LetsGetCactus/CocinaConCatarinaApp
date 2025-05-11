@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/iSonido"
+        android:icon="@drawable/radio"
+        android:title="@string/Sonido" />
+
+    <item
+        android:id="@+id/favoritos"
+        android:icon="@drawable/fav_icono"
+        android:title="@string/Favoritos" />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/pizza_icono"
+        android:title="@string/app_name" />
+
+</menu>

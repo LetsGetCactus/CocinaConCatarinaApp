@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Ir">Ir</string>
+    <string name="app_name">CocinaConCatarina</string>
+    <string name="BtAllRecetas">Todas as recetas</string>
+    <string name="BtDulces">Recetas doces</string>
+    <string name="BtSaladas">Recetas Salgadas</string>
+    <string name="Favoritos">Favoritos</string>
+    <string name="Sonido">Son on/off</string>
+    <string name="Registro">Rexistrarse</string>
+    <string name="Login">Iniciar sesion</string>
+    <string name="buscar">Buscar</string>
+    <string name="bienvenida">Benvido a Cocina con Catarina!!</string>
+    <string name="introduce_tu_nombre">Introduce o teu nome</string>
+    <string name="tituloRegistro">Por favor, introduce os teus datos para rexistrarte</string>
+    <string name="introduce_tu_contrasena">Introduce o teu contrasinal</string>
+    <string name="repite_tu_contrasena">Repite o teu contrasinal</string>
+    <string name="comentario_puntuacion">comentario/puntuacion</string>
+    <string name="nombre_receta">Nome receta</string>
+      <string name="introduce_tu_email">Introduce o teu mail</string>
+    <string name="editar">Editar</string>
+    <string name="Reset">Resetear</string>
+    <string name="descripcion">...</string>
+</resources>

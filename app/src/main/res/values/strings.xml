@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Ir">Ir</string>
+    <string name="Registro">Registrarse</string>
+    <string name="Login">Iniciar sesion</string>
+    <string name="ejemplo" translatable="false">Esto es solo un ejemplo de lo que se vera</string>
+    <string name="Email" translatable="false">correo@electronico.com</string>
+    <string name="pass" translatable="false">******</string>
+    <string name="menu" translatable="false" />
+    <string name="Sonido">Sonido on/off</string>
+    <string name="Favoritos">Favoritos</string>
+    <string name="BtSaladas">Recetas Saladas</string>
+    <string name="BtDulces">Recetas Dulces</string>
+    <string name="BtAllRecetas">Todas las Recetas</string>
+    <string name="app_name" translatable="false">Cocina con Catarina</string>
+    <string name="bienvenida">Bienvenido a Cocina con Catarina!!</string>
+    <string name="introduce_tu_nombre">Introduce tu nombre</string>
+    <string name="tituloRegistro">Por favor, introduce tus datos para registrarte</string>
+    <string name="introduce_tu_contrasena">Introduce tu contraseña</string>
+    <string name="repite_tu_contrasena">Repite tu contraseña</string>
+    <string name="comentario_puntuacion">comentario/puntuacion</string>
+    <string name="nombre_receta">Nombre receta</string>
+    <string name="introduce_tu_email">Introduce tu email</string>
+    <string name="editar">Editar</string>
+    <string name="Reset">Resetear</string>
+    <string name="descripcion">...</string>
+
+
+</resources>

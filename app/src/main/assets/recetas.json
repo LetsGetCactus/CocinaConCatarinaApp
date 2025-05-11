@@ -1,0 +1,835 @@
+[
+  {
+    "id": 1,
+    "nombre": "Boloñesa al Oporto",
+    "descripcion": "Una sabrosa boloñesa con un toque dulce y aromático gracias al vino Oporto.",
+    "ingredientes": [
+      {
+        "cantidad": 400.0,
+        "unidad": "g",
+        "nombre": "Carne picada de vacuno o mixta"
+      },
+      {
+        "cantidad": 250.0,
+        "unidad": "g",
+        "nombre": "Pasta fresca rellena (jamón u otra)"
+      },
+      {
+        "cantidad": 100.0,
+        "unidad": "ml",
+        "nombre": "Vino dulce Oporto"
+      },
+      {
+        "cantidad": 150.0,
+        "unidad": "g",
+        "nombre": "Salsa de tomate"
+      },
+      {
+        "cantidad": 3.0,
+        "unidad": "unidades",
+        "nombre": "Champiñones grandes"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Zanahorias medianas"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "dientes",
+        "nombre": "Ajo"
+      },
+      {
+        "cantidad": 0.5,
+        "unidad": "cucharilla",
+        "nombre": "Orégano"
+      },
+      {
+        "cantidad": 0.5,
+        "unidad": "cucharilla",
+        "nombre": "Sal"
+      },
+      {
+        "cantidad": 0.5,
+        "unidad": "cucharilla",
+        "nombre": "Cebolla molida"
+      },
+      {
+        "cantidad": 0.25,
+        "unidad": "cucharilla",
+        "nombre": "Romero"
+      },
+      {
+        "cantidad": 0.125,
+        "unidad": "cucharilla",
+        "nombre": "Pimienta negra molida"
+      },
+      {
+        "cantidad": 3.0,
+        "unidad": "cucharadas",
+        "nombre": "Aceite de oliva virgen extra (AOVE)"
+      },
+      {
+        "cantidad": 70.0,
+        "unidad": "g",
+        "nombre": "Queso semicurado"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Picar finamente los ajos, los champiñones y las zanahorias."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Calentar el AOVE en una sartén a fuego medio-alto. Añadir los ajos y cocinar hasta que empiecen a dorarse."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Agregar la carne picada y remover hasta que esté medio hecha."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Incorporar las zanahorias y los champiñones, mezclar bien."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Verter el vino Oporto y la salsa de tomate. Remover y sazonar con sal, orégano, cebolla molida, romero y pimienta."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Cocinar a fuego bajo durante 15 minutos, removiendo ocasionalmente."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Mientras tanto, cocer la pasta fresca según las instrucciones del paquete (suele ser 2-3 minutos)."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Añadir la pasta cocida a la salsa de carne, integrar y cubrir con el queso semicurado rallado o en trozos."
+      },
+      {
+        "numero": 9,
+        "descripcion": "Tapar la sartén y cocinar a fuego bajo durante unos 5 minutos o hasta que el queso se derrita."
+      }
+    ],
+    "tiempo_preparacion": 40,
+    "porciones": 3,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 2,
+    "nombre": "Brownie",
+    "descripcion": "Un delicioso y denso pastel de chocolate con nueces y avellanas.",
+    "ingredientes": [
+      {
+        "cantidad": 100.0,
+        "unidad": "g",
+        "nombre": "Chocolate con leche para fundir"
+      },
+      {
+        "cantidad": 120.0,
+        "unidad": "g",
+        "nombre": "Mantequilla"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Huevos"
+      },
+      {
+        "cantidad": 150.0,
+        "unidad": "g",
+        "nombre": "Panela (o azúcar)"
+      },
+      {
+        "cantidad": 20.0,
+        "unidad": "g",
+        "nombre": "Nueces"
+      },
+      {
+        "cantidad": 15.0,
+        "unidad": "g",
+        "nombre": "Avellanas tostadas"
+      },
+      {
+        "cantidad": 50.0,
+        "unidad": "g",
+        "nombre": "Harina"
+      },
+      {
+        "cantidad": 0.25,
+        "unidad": "cucharilla",
+        "nombre": "Esencia de vainilla"
+      },
+      {
+        "cantidad": 0.25,
+        "unidad": "cucharilla",
+        "nombre": "Sal"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Derretir la mantequilla junto con el chocolate al baño maría o en el microondas con cuidado."
+      },
+      {
+        "numero": 2,
+        "descripcion": "En una picadora, triturar la harina, las nueces y las avellanas hasta obtener una mezcla fina."
+      },
+      {
+        "numero": 3,
+        "descripcion": "En un bol, batir los huevos con la panela y la esencia de vainilla. Añadir la sal y mezclar bien."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Incorporar la mezcla de harina y frutos secos al bol con los huevos y mezclar."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Añadir la mezcla de chocolate y mantequilla derretida a la masa y mezclar hasta que esté homogénea."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Verter la masa en un recipiente apto para horno (no muy grande) previamente enmantequillado o con papel de horno en la base y los lados."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Hornear a 180°C durante unos 40 minutos. Comprobar la cocción con un palillo (debe salir ligeramente húmedo)."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Dejar enfriar completamente antes de desmoldar y cortar en porciones. Opcionalmente, decorar con cacao en polvo o azúcar glas y servir con helado."
+      }
+    ],
+    "tiempo_preparacion": 60,
+    "porciones": 6,
+    "categoria": "Dulce",
+    "imagenReceta": "dulce",
+    "favorita": false
+  },
+  {
+    "id": 3,
+    "nombre": "Caldo Gallego",
+    "descripcion": "Un plato tradicional gallego, reconfortante y lleno de sabor.",
+    "ingredientes": [
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Patatas medianas"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "litros",
+        "nombre": "Agua"
+      },
+      {
+        "cantidad": 200.0,
+        "unidad": "g",
+        "nombre": "Habas blancas"
+      },
+      {
+        "cantidad": 30.0,
+        "unidad": "g",
+        "nombre": "Unto"
+      },
+      {
+        "cantidad": 300.0,
+        "unidad": "g",
+        "nombre": "(aprox.) Hueso de espinazo de cerdo (desalado)"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "unidad",
+        "nombre": "Chorizo"
+      },
+      {
+        "cantidad": 800.0,
+        "unidad": "g",
+        "nombre": "Nabizas/grelos (peso del manojo entero sin limpiar)"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Poner las habas a remojo la noche anterior o precocerlas durante 1 hora."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Desalar el hueso de espinazo de cerdo."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Seleccionar y escaldar las nabizas/grelos (sumergir en agua hirviendo durante 1 minuto)."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Pelar y cortar las patatas en trozos medianos."
+      },
+      {
+        "numero": 5,
+        "descripcion": "En una olla grande, poner a cocer el agua, las habas (no totalmente cocidas) y el unto durante unos 30 minutos."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Añadir el hueso de cerdo, las patatas, las nabizas/grelos (cortadas) y el chorizo (cortado en rodajas o trozos)."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Cocer a fuego medio durante unos 20 minutos más."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Servir caliente."
+      }
+    ],
+    "tiempo_preparacion": 30,
+    "porciones": 5,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 4,
+    "nombre": "Cerdo Agridulce con Piña",
+    "descripcion": "Un plato de inspiración oriental con trozos de cerdo rebozado en una salsa agridulce con piña.",
+    "ingredientes": [
+      {
+        "cantidad": 1.0,
+        "unidad": "unidad",
+        "nombre": "Huevo"
+      },
+      {
+        "cantidad": 50.0,
+        "unidad": "g",
+        "nombre": "Harina"
+      },
+      {
+        "cantidad": 250.0,
+        "unidad": "ml",
+        "nombre": "Zumo de piña (en lata)"
+      },
+      {
+        "cantidad": null,
+        "unidad": "al gusto",
+        "nombre": "Sal"
+      },
+      {
+        "cantidad": null,
+        "unidad": "al gusto",
+        "nombre": "Pimienta"
+      },
+      {
+        "cantidad": 3.0,
+        "unidad": "cucharaditas",
+        "nombre": "Maicena"
+      },
+      {
+        "cantidad": 30.0,
+        "unidad": "ml",
+        "nombre": "Agua"
+      },
+      {
+        "cantidad": 35.0,
+        "unidad": "g",
+        "nombre": "Panela"
+      },
+      {
+        "cantidad": 45.0,
+        "unidad": "ml",
+        "nombre": "Salsa de soja"
+      },
+      {
+        "cantidad": 30.0,
+        "unidad": "ml",
+        "nombre": "Vinagre de arroz"
+      },
+      {
+        "cantidad": 400.0,
+        "unidad": "g",
+        "nombre": "Cerdo (filetes)"
+      },
+      {
+        "cantidad": 3.0,
+        "unidad": "rodajas",
+        "nombre": "Piña (en lata o fresca)"
+      },
+      {
+        "cantidad": null,
+        "unidad": "al gusto",
+        "nombre": "Aceite para freír"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Cortar los filetes de cerdo en trozos."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Para el rebozado, mezclar en un plato hondo el huevo, la harina, 50ml de zumo de piña, sal y pimienta."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Calentar aceite en una sartén a fuego medio y freír los trozos de cerdo rebozados durante unos 3 minutos por cada lado, hasta que estén dorados y cocidos."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Trocear las rodajas de piña y reservar."
+      },
+      {
+        "numero": 5,
+        "descripcion": "En un vaso, mezclar el agua y la maicena hasta que no queden grumos."
+      },
+      {
+        "numero": 6,
+        "descripcion": "En otra sartén a fuego alto, poner la panela, el resto del zumo de piña (200ml), la salsa de soja y el vinagre de arroz. Dejar que burbujee y reduzca un poco (unos 5-10 minutos)."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Añadir la mezcla de maicena y agua a la salsa, removiendo enérgicamente hasta que espese."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Incorporar los trozos de piña y el cerdo rebozado a la salsa. Remover para que se impregnen bien."
+      },
+      {
+        "numero": 9,
+        "descripcion": "Servir caliente, solo o con guarnición como arroz."
+      }
+    ],
+    "tiempo_preparacion": 50,
+    "porciones": 3,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 5,
+    "nombre": "Hojaldre de Brie y Melocotón",
+    "descripcion": "Un bocado sencillo y delicioso que combina la cremosidad del brie con el dulzor del melocotón y el toque salado del jamón.",
+    "ingredientes": [
+      {
+        "cantidad": 1.0,
+        "unidad": "lámina",
+        "nombre": "Hojaldre rectangular (230g)"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Melocotones"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "puñado",
+        "nombre": "Arándanos"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "cucharada",
+        "nombre": "Miel"
+      },
+      {
+        "cantidad": 200.0,
+        "unidad": "g",
+        "nombre": "Queso brie"
+      },
+      {
+        "cantidad": 4.0,
+        "unidad": "lonchas",
+        "nombre": "Jamón serrano"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Precalentar el horno a 210°C."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Estirar la masa de hojaldre con un rodillo y cortarla por la mitad a lo largo, obteniendo dos tiras."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Distribuir trozos de queso brie espaciados sobre cada tira de hojaldre."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Pelar, deshuesar y laminar los melocotones. Colocar las láminas de melocotón de forma dispersa sobre el queso brie."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Añadir los arándanos y el jamón serrano troceado sobre el hojaldre."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Rociar la miel por encima de todos los ingredientes."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Hornear sobre papel de horno durante 12 minutos a 210°C con calor arriba y abajo."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Dejar enfriar completamente antes de servir. Se puede enfriar en la nevera para que el queso no se desparrame."
+      }
+    ],
+    "tiempo_preparacion": 30,
+    "porciones": 2,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 6,
+    "nombre": "Ñoquis al Pesto",
+    "descripcion": "Deliciosos ñoquis caseros acompañados de una aromática salsa pesto.",
+    "ingredientes": [
+      {
+        "cantidad": 1.0,
+        "unidad": "kg",
+        "nombre": "Patatas"
+      },
+      {
+        "cantidad": 300.0,
+        "unidad": "g",
+        "nombre": "Harina de trigo"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "unidad",
+        "nombre": "Huevo"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "cucharilla",
+        "nombre": "Sal"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "pizca",
+        "nombre": "Pimienta negra molida"
+      },
+      {
+        "cantidad": 25.0,
+        "unidad": "g",
+        "nombre": "Parmesano rallado"
+      },
+      {
+        "cantidad": 35.0,
+        "unidad": "hojas",
+        "nombre": "(aprox. 18g) Albahaca fresca"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "diente",
+        "nombre": "Ajo"
+      },
+      {
+        "cantidad": 30.0,
+        "unidad": "g",
+        "nombre": "Almendras laminadas"
+      },
+      {
+        "cantidad": 0.5,
+        "unidad": "cucharilla",
+        "nombre": "Sal (para la masa)"
+      },
+      {
+        "cantidad": 10.0,
+        "unidad": "g",
+        "nombre": "Almendras laminadas (para el pesto)"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "pizca",
+        "nombre": "Sal (para el pesto)"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Pelar, cortar en trozos pequeños y cocer las patatas hasta que estén muy blandas. Escurrir y dejar enfriar."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Hacer puré las patatas frías con un tenedor o pasapurés."
+      },
+      {
+        "numero": 3,
+        "descripcion": "En un bol, mezclar la harina, la sal (1/2 cucharilla) y la pimienta. Hacer un hueco en el centro, añadir el huevo batido y mezclar. Incorporar el puré de patata y amasar hasta obtener una masa homogénea. Enharinar ligeramente una superficie y seguir amasando suavemente."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Formar \"churritos\" de unos 2 cm de grosor y cortar trozos de unos 3 cm de largo. Opcionalmente, marcar los ñoquis con un tenedor."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Dejar reposar los ñoquis durante 20 minutos."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Mientras tanto, tostar ligeramente las almendras laminadas en una sartén."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Para el pesto, batir el AOVE, la albahaca, el ajo, el parmesano, 10g de almendras tostadas y una pizca de sal hasta obtener una salsa."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Cocer los ñoquis en agua hirviendo hasta que floten (aproximadamente 1 minuto)."
+      },
+      {
+        "numero": 9,
+        "descripcion": "Servir los ñoquis con una cucharada de pesto por plato y espolvorear con almendras laminadas."
+      }
+    ],
+    "tiempo_preparacion": 65,
+    "porciones": 4,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 7,
+    "nombre": "Pasta Carbonara",
+    "descripcion": "Una receta de pasta clásica, rápida y deliciosa, sin nata.",
+    "ingredientes": [
+      {
+        "cantidad": 250.0,
+        "unidad": "g",
+        "nombre": "Pasta"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "dientes",
+        "nombre": "Ajo"
+      },
+      {
+        "cantidad": 1.0,
+        "unidad": "cucharada",
+        "nombre": "Aceite"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Huevos"
+      },
+      {
+        "cantidad": 50.0,
+        "unidad": "g",
+        "nombre": "Panceta"
+      },
+      {
+        "cantidad": 70.0,
+        "unidad": "g",
+        "nombre": "Queso curado (cabra, parmesano u otro)"
+      },
+      {
+        "cantidad": 0.25,
+        "unidad": "cucharilla",
+        "nombre": "Pimienta negra molida"
+      },
+      {
+        "cantidad": null,
+        "unidad": "al gusto",
+        "nombre": "Sal"
+      },
+      {
+        "cantidad": null,
+        "opcional": true,
+        "unidad": "al gusto",
+        "nombre": "Cayena molida"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Poner la pasta a cocer y reservar un poco del agua de cocción."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Laminar los ajos y trocear la panceta. Rallar el queso."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Batir los huevos y añadir el queso rallado, sal y pimienta."
+      },
+      {
+        "numero": 4,
+        "descripcion": "En una sartén grande, calentar el aceite a fuego medio. Añadir el ajo y cocinar hasta que empiece a dorarse."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Agregar la panceta y cocinar hasta que esté dorada y crujiente."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Bajar el fuego y añadir la pasta cocida con un poco de su agua de cocción."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Verter la mezcla de huevo y queso sobre la pasta, removiendo rápidamente para que se cocine con el calor residual sin llegar a cuajarse."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Añadir la cayena molida (opcional). Servir inmediatamente."
+      }
+    ],
+    "tiempo_preparacion": 20,
+    "porciones": 2,
+    "categoria": "Salado",
+    "imagenReceta": "salado",
+    "favorita": false
+  },
+  {
+    "id": 8,
+    "nombre": "Profiteroles",
+    "descripcion": "Delicados bocaditos rellenos, perfectos para un capricho dulce.",
+    "ingredientes": [
+      {
+        "cantidad": 62.5,
+        "unidad": "ml",
+        "nombre": "Leche"
+      },
+      {
+        "cantidad": 62.5,
+        "unidad": "ml",
+        "nombre": "Agua"
+      },
+      {
+        "cantidad": 75.0,
+        "unidad": "g",
+        "nombre": "Mantequilla"
+      },
+      {
+        "cantidad": 75.0,
+        "unidad": "g",
+        "nombre": "Harina normal"
+      },
+      {
+        "cantidad": 10.0,
+        "unidad": "g",
+        "nombre": "Azúcar/sirope/endulzante (al gusto)"
+      },
+      {
+        "cantidad": 5.0,
+        "unidad": "g",
+        "nombre": "Sal"
+      },
+      {
+        "cantidad": 2.0,
+        "unidad": "unidades",
+        "nombre": "Huevos"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Precalentar el horno a 180°C."
+      },
+      {
+        "numero": 2,
+        "descripcion": "En una olla, mezclar la mantequilla, la leche, el agua, la sal y el endulzante. Remover bien hasta que la mantequilla se derrita y llevar a ebullición."
+      },
+      {
+        "numero": 3,
+        "descripcion": "Agregar la harina de golpe y mezclar enérgicamente con un utensilio de madera hasta obtener una masa firme y suave que se despegue del recipiente."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Incorporar los huevos uno a uno, asegurándose de que cada uno se integre completamente antes de añadir el siguiente."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Rellenar una manga pastelera con la masa o, con dos cucharillas, formar pequeñas bolitas y colocarlas en una bandeja de horno enharinada."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Hornear durante 20 minutos a 180°C, o hasta que estén dorados."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Dejar enfriar completamente antes de rellenar."
+      }
+    ],
+    "tiempo_preparacion": 35,
+    "porciones": 18,
+    "categoria": "Dulce",
+    "imagenReceta": "dulce",
+    "favorita": false
+  },
+  {
+    "id": 9,
+    "nombre": "Trufas de Galleta Caramelizada",
+    "descripcion": "Deliciosas trufas con un intenso sabor a galleta caramelizada y un toque crujiente.",
+    "ingredientes": [
+      {
+        "cantidad": 200.0,
+        "unidad": "g",
+        "nombre": "Galletas caramelizadas"
+      },
+      {
+        "cantidad": 300.0,
+        "unidad": "g",
+        "nombre": "Chocolate blanco para fundir"
+      },
+      {
+        "cantidad": null,
+        "unidad": "al gusto",
+        "nombre": "Escamas de sal"
+      },
+      {
+        "cantidad": 100.0,
+        "unidad": "g",
+        "nombre": "Queso crema"
+      },
+      {
+        "cantidad": 120.0,
+        "unidad": "g",
+        "nombre": "Crema de galletas caramelizada para untar"
+      }
+    ],
+    "pasos": [
+      {
+        "numero": 1,
+        "descripcion": "Rallar 100g de chocolate blanco y reservar el resto para la cobertura."
+      },
+      {
+        "numero": 2,
+        "descripcion": "Triturar finamente las galletas caramelizadas y reservar una cucharada para espolvorear."
+      },
+      {
+        "numero": 3,
+        "descripcion": "En un bol, mezclar las galletas trituradas, el chocolate blanco rallado, el queso crema y la crema de galletas caramelizada hasta obtener una masa homogénea."
+      },
+      {
+        "numero": 4,
+        "descripcion": "Formar bolitas del tamaño deseado (aprox. 2-3 cm de diámetro)."
+      },
+      {
+        "numero": 5,
+        "descripcion": "Dejar reposar las bolitas en la nevera durante al menos 1 hora (idealmente toda la noche)."
+      },
+      {
+        "numero": 6,
+        "descripcion": "Derretir el chocolate blanco restante con cuidado (al baño maría o en el microondas a intervalos cortos)."
+      },
+      {
+        "numero": 7,
+        "descripcion": "Sumergir cada bolita en el chocolate blanco derretido, colocar sobre papel de horno y espolvorear con las galletas trituradas reservadas y una pizca de escamas de sal."
+      },
+      {
+        "numero": 8,
+        "descripcion": "Guardar en la nevera hasta que el chocolate se endurezca."
+      }
+    ],
+    "tiempo_preparacion": 25,
+    "porciones": 35,
+    "categoria": "Dulce",
+    "imagenReceta": "dulce",
+    "favorita": false
+  }
+]

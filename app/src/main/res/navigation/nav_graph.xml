@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginUsuario">
+    <fragment
+        android:id="@+id/home"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_listadoRecetas"
+            app:destination="@id/listadoRecetas" />
+        <action
+            android:id="@+id/action_home_to_favoritos"
+            app:destination="@id/favoritos" />
+        <argument
+            android:name="correo"
+            app:argType="string" />
+        <argument android:name="contrasena" />
+        <action
+            android:id="@+id/action_home_to_loginUsuario"
+            app:destination="@id/loginUsuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginUsuario"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.LoginUsuario"
+        android:label="LoginUsuario" >
+        <action
+            android:id="@+id/action_loginUsuario_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_loginUsuario_to_registroUsuario"
+            app:destination="@id/registroUsuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritos"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.Favoritos"
+        android:label="Favoritos" >
+        <action
+        android:id="@+id/action_favoritos_to_itemReceta"
+        app:destination="@id/itemReceta" >
+        <argument
+            android:name="titulo"
+            app:argType="string"
+            android:defaultValue="Receta Favorita" />
+        <argument
+            android:name="idReceta"
+            app:argType="integer" />
+    </action>
+        <action
+            android:id="@+id/action_favoritos_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="usuario"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_favoritos_to_loginUsuario"
+            app:destination="@id/loginUsuario" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/listadoRecetas"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.ListadoRecetas"
+        android:label="fragment_listado_recetas"
+        tools:layout="@layout/fragment_listado_recetas" >
+        <action
+            android:id="@+id/action_listadoRecetas_to_itemReceta"
+            app:destination="@id/itemReceta" />
+        <action
+            android:id="@+id/action_listadoRecetas_to_favoritos"
+            app:destination="@id/favoritos" />
+        <action
+            android:id="@+id/action_listadoRecetas_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="categoria"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listadoRecetas_to_loginUsuario"
+            app:destination="@id/loginUsuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemReceta"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.ItemReceta"
+        android:label="ItemReceta" >
+        <action
+            android:id="@+id/action_itemReceta_to_favoritos"
+            app:destination="@id/favoritos" />
+        <action
+            android:id="@+id/action_itemReceta_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="idReceta"
+            app:argType="integer" />
+        <argument
+            android:name="titulo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_itemReceta_to_loginUsuario"
+            app:destination="@id/loginUsuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroUsuario"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.RegistroUsuario"
+        android:label="fragment_registro_usuario"
+        tools:layout="@layout/fragment_registro_usuario" >
+        <action
+            android:id="@+id/action_registroUsuario_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="correo"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

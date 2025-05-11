@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/beisMedio">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragmentos.ItemReceta"
+  >
+
+    <ImageView
+        android:id="@+id/imgItemReceta"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_margin="25dp"
+        android:src="@drawable/imgejemplo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibHacerFavorito"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/favorito"
+        android:contentDescription="@string/Favoritos"
+        app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
+        app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
+        app:layout_constraintEnd_toEndOf="@+id/imgItemReceta"
+
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        />
+
+
+    <ListView
+        android:id="@+id/lvIngredientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:paddingHorizontal="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibHacerFavorito"
+        android:background="@color/camelClaro"
+        />
+    <TextView
+        android:id="@+id/tvPasosReceta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvIngredientes"
+        android:text="@string/ejemplo"
+        android:paddingHorizontal="20dp"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+  android:background="@color/beisClaro"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

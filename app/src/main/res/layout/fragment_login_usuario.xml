@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_gravity="center_vertical"
+    android:id="@+id/loginUsuario"
+    android:background="@color/verdeMusgo"
+    >
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ivUser"
+        android:text="@string/bienvenida"
+        android:layout_marginVertical="50dp"
+        android:textSize="20dp"
+        android:gravity="center" style="@style/textoPrincipalOscuro"/>
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+        android:layout_marginTop="75dp"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUser"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        style="@style/textoPrincipalOscuro"
+
+        />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPass"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Registro"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="16dp"
+            style="@style/boton2"
+            />
+
+        <Button
+            android:id="@+id/btLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Login"
+            android:textSize="16dp"
+            style="@style/boton2"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

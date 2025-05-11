@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.fragmentos.ModificarRecetas"
+        android:background="@color/verdeMusgo">
+
+        <ImageView
+            android:id="@+id/imgItemReceta"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:layout_margin="25dp"
+            android:src="@drawable/imgejemplo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/ibReset"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/reset"
+            android:contentDescription="@string/Reset"
+            app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
+            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
+            app:layout_constraintEnd_toStartOf="@+id/ibCancelar"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            />
+        <ImageButton
+            android:id="@+id/ibGuardar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/guardar"
+            android:contentDescription="@string/Favoritos"
+            app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
+            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
+            app:layout_constraintEnd_toStartOf="@+id/ibReset"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            />
+        <ImageButton
+            android:id="@+id/ibCancelar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/cancel"
+            android:contentDescription="@string/editar"
+            app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
+            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
+            app:layout_constraintEnd_toEndOf="@id/imgItemReceta"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            />
+
+        <ListView
+            android:id="@+id/lvIngredientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:paddingHorizontal="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
+
+
+            />
+        <TextView
+            android:id="@+id/tvPasosReceta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lvIngredientes"
+            android:text="@string/ejemplo"
+            android:paddingHorizontal="20dp"
+            android:layout_margin="10dp"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

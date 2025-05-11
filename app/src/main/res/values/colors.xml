@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="marronOscuro">#A0937D</color>
+    <color name="marronMuyOscuro">#604652</color>
+    <color name="beisClaro">#F6E6CB</color>
+    <color name="beisMedio">#E7D4B5</color>
+    <color name="camelClaro">#ECCA9C</color>
+    <color name="camel">#DBA979</color>
+    <color name="verdeMusgo">#B6C7AA</color>
+    <color name="verdeClaro">#cbc892</color>
+    <color name="verde">#AFD198</color>
+    <color name="verdeOscuroContraste">#385723</color>
+    <color name="rosaPaloClaro">#C8AAAA</color>
+    <color name="rosaPalo">#cb9294</color>
+    <color name="morado">#574964</color>
+</resources>

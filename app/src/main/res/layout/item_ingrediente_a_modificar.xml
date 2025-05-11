@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:layout_marginHorizontal="25dp">
+
+    <EditText
+        android:id="@+id/etCantidadIngrediente"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Cantidad"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/tvUnidadIngrediente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:text="Unidad" />
+
+    <TextView
+        android:id="@+id/tvNombreIngrediente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nombre"
+        android:textSize="20dp"
+        android:layout_marginStart="15dp"/>
+
+
+
+</LinearLayout>
