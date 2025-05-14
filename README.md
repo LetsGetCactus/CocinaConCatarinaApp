@@ -53,6 +53,7 @@ La app tiene una arquitectura modular que se divide en 4 carpetas:
 
 ##
 ### Opciones a implementar en un futuro (mejoras)
+- Mover las clases Entity a la carpeta db!!
 - Viewmodel
 - Dark mode
 - Barra de búsqueda
