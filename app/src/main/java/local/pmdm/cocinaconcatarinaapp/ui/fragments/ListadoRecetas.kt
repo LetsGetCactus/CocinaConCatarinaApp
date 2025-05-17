@@ -1,20 +1,12 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import android.widget.Toast
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
-import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.navArgs
 
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,9 +16,11 @@ import local.pmdm.cocinaconcatarinaapp.db.data.RecetasDataSource
 import local.pmdm.cocinaconcatarinaapp.databinding.FragmentListadoRecetasBinding
 import local.pmdm.cocinaconcatarinaapp.model.Receta
 import local.pmdm.cocinaconcatarinaapp.ui.adapters.RecetaAdapter
-import java.util.Locale
 
-
+/*
+ * Fragment para mostrar una lista de recetas.
+ * Puede filtrarse por categoría: dulce o salado
+ */
 class ListadoRecetas : Fragment() {
     private var _binding: FragmentListadoRecetasBinding?=null
     private val binding get()= checkNotNull(_binding){

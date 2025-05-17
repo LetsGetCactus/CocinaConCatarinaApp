@@ -1,4 +1,4 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -19,11 +19,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.FragmentLoginUsuarioBinding
-import local.pmdm.cocinaconcatarinaapp.databinding.FragmentModificarRecetasBinding
 import local.pmdm.cocinaconcatarinaapp.db.AppDatabase
 import local.pmdm.cocinaconcatarinaapp.db.dao.UserDAO
 import java.util.regex.Pattern
 
+/*
+ * Fragment para el login de usuarios.
+ */
 class LoginUsuario : Fragment() {
     private var _binding: FragmentLoginUsuarioBinding?=null
     private val binding get()= checkNotNull(_binding){
@@ -55,10 +57,9 @@ class LoginUsuario : Fragment() {
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView?.visibility = GONE
 
-
-
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -78,26 +79,25 @@ class LoginUsuario : Fragment() {
             }
 
             // Las operaciones de base de datos deben ejecutarse en una corrutina
-            CoroutineScope(Dispatchers.IO).launch { // Inicia una corrutina en el hilo de IO (entrada/salida)
+            CoroutineScope(Dispatchers.IO).launch {
                 // Buscar el usuario por email en la base de datos
                 val user = userDao.getUserByEmail(email)
 
-                withContext(Dispatchers.Main) { // Cambia al hilo principal para actualizar la UI (mostrar Toast, navegar)
+                withContext(Dispatchers.Main) {
                     if (user != null) {
-                        // TODO: Implementar verificación segura de contraseña (comparar hash)
-                        // Por ahora, una comparación simple (NO SEGURO para producción)
+                        // FALTARIA: Implementar metodos para contraseña segura
                         if (user.contrasenha == pass) { // ¡Recuerda que deberías comparar HASHES!
                             Toast.makeText(requireContext(), "Login exitoso. ¡Bienvenido, ${user.nombre}!", Toast.LENGTH_SHORT).show()
 
                             // Guardar el email del usuario logueado en SharedPreferences
                             with(sharedPreferences.edit()) {
                                 putString(USER_EMAIL, user.correo) // Guarda el email
-                                apply() // Aplica los cambios de forma asíncrona
+                                apply() // Aplica los cambios
                             }
                             Log.d(TAG, "Usuario logueado: ${user.correo}")
 
-                            // Navegar a la pantalla principal (Home o ListadoRecetas, según tu flujo)
-                            findNavController().navigate(R.id.action_loginUsuario_to_home) // Asegúrate de que esta acción existe en tu nav_graph.xml
+                            // Navegar a la pantalla principal
+                            findNavController().navigate(R.id.action_loginUsuario_to_home)
 
                         } else {
                             Toast.makeText(requireContext(), "Contraseña incorrecta.", Toast.LENGTH_SHORT).show()
@@ -129,11 +129,14 @@ class LoginUsuario : Fragment() {
     }
 
 
-    //Funcion para validar emails
+   /*
+    * Metodo para validar el email
+    */
     private fun validarEmail(email:String): Boolean{
         val pattern= Pattern.compile("[a-z0-9._-]+@[a-z]+\\.+[a-z]{2,}")
         return pattern.matcher(email).matches()
     }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding=null

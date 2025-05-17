@@ -6,7 +6,7 @@
     app:startDestination="@id/loginUsuario">
     <fragment
         android:id="@+id/home"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.Home"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginUsuario"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.LoginUsuario"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.LoginUsuario"
         android:label="LoginUsuario" >
         <action
             android:id="@+id/action_loginUsuario_to_home"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritos"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.Favoritos"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.Favoritos"
         android:label="Favoritos" >
         <action
         android:id="@+id/action_favoritos_to_itemReceta"
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/listadoRecetas"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.ListadoRecetas"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.ListadoRecetas"
         android:label="fragment_listado_recetas"
         tools:layout="@layout/fragment_listado_recetas" >
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemReceta"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.ItemReceta"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.ItemReceta"
         android:label="ItemReceta" >
         <action
             android:id="@+id/action_itemReceta_to_favoritos"
@@ -101,10 +101,13 @@
         <action
             android:id="@+id/action_itemReceta_to_loginUsuario"
             app:destination="@id/loginUsuario" />
+        <action
+            android:id="@+id/action_itemReceta_to_modificarReceta"
+            app:destination="@id/modificarReceta" />
     </fragment>
     <fragment
         android:id="@+id/registroUsuario"
-        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragmentos.RegistroUsuario"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.RegistroUsuario"
         android:label="fragment_registro_usuario"
         tools:layout="@layout/fragment_registro_usuario" >
         <action
@@ -118,5 +121,15 @@
             android:name="password"
             app:argType="string"
             app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarReceta"
+        android:name="local.pmdm.cocinaconcatarinaapp.ui.fragments.ModificarReceta"
+        android:label="ModificarReceta" >
+        <action
+            android:id="@+id/action_modificarReceta_to_itemReceta"
+            app:destination="@id/itemReceta" />
+        <argument android:name="idReceta"
+            app:argType="integer" />
     </fragment>
 </navigation>

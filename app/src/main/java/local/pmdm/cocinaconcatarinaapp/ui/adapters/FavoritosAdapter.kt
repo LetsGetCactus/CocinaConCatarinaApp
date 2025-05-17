@@ -1,51 +1,55 @@
 package local.pmdm.cocinaconcatarinaapp.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.FragmentFavoritoscarditemBinding
-import local.pmdm.cocinaconcatarinaapp.db.data.FavoritosItemListener
 import local.pmdm.cocinaconcatarinaapp.model.Receta
-import local.pmdm.cocinaconcatarinaapp.ui.fragmentos.Favoritos
 
+/*
+* Interfaz para manejar los clics en los items de favoritoscarditem
+ */
 class FavoritosAdapter(
     private val listener: FavoritosItemListener
 ) : RecyclerView.Adapter<FavoritosAdapter.FavoritosViewHolder>(){
 
     //Var para almacenar la lista de Recetas que sean favorito=true
     private var listadoFavoritos: List<Receta> = emptyList()
-    // Método para actualizar la lista de recetas en el adaptador
-    // Cuando se llama a este método, el RecyclerView se actualizará para mostrar la nueva lista.
+
+    /*
+     * Actualiza la lista de favoritos y notifica al RView que los datos han cambiado.
+     */
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Receta>) {
         listadoFavoritos = list // Actualiza la lista interna del adaptador
-        notifyDataSetChanged() // Notifica al RecyclerView que los datos han cambiado
+        notifyDataSetChanged() // Notifica al RView que los datos han cambiado
     }
 
     class FavoritosViewHolder(
         private val binding: FragmentFavoritoscarditemBinding,
         private val listener: FavoritosItemListener
     ): RecyclerView.ViewHolder(binding.root){
-        //Enlaza los datos de una receta con la vista
+        //Enlaza los datos de una receta con la view
         fun bind(receta: Receta){
             binding.tvNombre.text=receta.nombre
             binding.tvDescripcion.text=receta.descripcion
 
-            val imageName = receta.imagenReceta // Obtiene el nombre del recurso (String?)
+            val imageName = receta.imagenReceta
             if (imageName != null) {
-                // Obtiene el ID del recurso drawable a partir de su nombre
                 val resourceId = itemView.context.resources.getIdentifier(
                     imageName, "drawable", itemView.context.packageName
                 )
                 if (resourceId != 0) { // resourceId será 0 si el recurso no se encuentra
                     binding.ivFavorito.setImageResource(resourceId) // Establece la imagen usando el ID
                 } else {
-                    // Manejar el caso en que el recurso no se encuentra (ej. poner una imagen por defecto)
-                    binding.ivFavorito.setImageResource(R.drawable.ic_launcher_foreground) // Reemplaza con tu imagen por defecto
+                    //pone una imagen por defecto si no se encuentra
+                    binding.ivFavorito.setImageResource(R.drawable.ic_launcher_foreground)
                 }
             } else {
                 // Manejar el caso en que imagenReceta es null en el JSON
-                binding.ivFavorito.setImageResource(R.drawable.ic_launcher_foreground) // Reemplaza con tu imagen por defecto
+                binding.ivFavorito.setImageResource(R.drawable.ic_launcher_foreground)
             }
             //Como quiero que todo el cardItem sea boton hacemos binding.root en vez de binding.btIr
             binding.root.setOnClickListener {

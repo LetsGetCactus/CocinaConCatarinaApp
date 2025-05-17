@@ -9,7 +9,7 @@ import java.io.InputStream
 import android.util.Log
 
 /*
-Saca los datos del archivo recetas.json
+* Clase para cargar las recetas desde el archivo JSON
  */
 class RecetasDataSource {
 

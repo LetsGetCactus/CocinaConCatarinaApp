@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.fragmentos.ModificarRecetas"
+        tools:context=".ui.fragments.ModificarRecetas"
         android:background="@color/verdeMusgo">
 
         <ImageView
@@ -27,7 +27,6 @@
             android:src="@drawable/reset"
             android:contentDescription="@string/Reset"
             app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
-            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
             app:layout_constraintEnd_toStartOf="@+id/ibCancelar"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginEnd="8dp"
@@ -41,7 +40,6 @@
             android:src="@drawable/guardar"
             android:contentDescription="@string/Favoritos"
             app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
-            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
             app:layout_constraintEnd_toStartOf="@+id/ibReset"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginEnd="8dp"
@@ -55,35 +53,17 @@
             android:src="@drawable/cancel"
             android:contentDescription="@string/editar"
             app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
-            app:layout_constraintBottom_toTopOf="@+id/lvIngredientes"
             app:layout_constraintEnd_toEndOf="@id/imgItemReceta"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
             />
-
-        <ListView
-            android:id="@+id/lvIngredientes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="35dp"
-            android:paddingHorizontal="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgItemReceta"
-
-
-            />
-        <TextView
-            android:id="@+id/tvPasosReceta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lvIngredientes"
-            android:text="@string/ejemplo"
-            android:paddingHorizontal="20dp"
-            android:layout_margin="10dp"
-
-            />
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rvModificarIng"
+    app:layout_constraintTop_toBottomOf="@id/ibGuardar"
+    app:layout_constraintStart_toStartOf="@id/imgItemReceta"
+    app:layout_constraintEnd_toEndOf="@id/imgItemReceta"
+    app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

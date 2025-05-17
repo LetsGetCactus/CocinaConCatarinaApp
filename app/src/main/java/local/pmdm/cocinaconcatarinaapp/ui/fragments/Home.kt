@@ -1,4 +1,4 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.FragmentHomeBinding
 
-
+/*
+ * Fragment para la pantalla principal de la aplicación.
+ * Muestra los botones para navegar a las pantallas de recetas.
+ */
 class Home : Fragment() {
     private var _binding: FragmentHomeBinding?=null
     private val binding get()= checkNotNull(_binding){
@@ -31,11 +34,17 @@ class Home : Fragment() {
        _binding= FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
+         * Muestra la barra de navegación al entrar en la pantalla principal.
+         */
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView?.visibility = View.VISIBLE
+
 
         binding.BtAllRecetas.setOnClickListener{
             // Creamos la acción de navegación generada por Safe Args

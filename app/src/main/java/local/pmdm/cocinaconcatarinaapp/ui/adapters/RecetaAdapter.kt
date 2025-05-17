@@ -7,14 +7,20 @@ import androidx.recyclerview.widget.RecyclerView
 import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.CarditemBinding
 import local.pmdm.cocinaconcatarinaapp.model.Receta
-import local.pmdm.cocinaconcatarinaapp.ui.fragmentos.ListadoRecetasDirections
+import local.pmdm.cocinaconcatarinaapp.ui.fragments.ListadoRecetasDirections
 
+/*
+* Adapter para el RecyclerView de recetas.
+* Recibe una lista de recetas y muestra cada una en un item.
+*
+ */
 class RecetaAdapter(private var recetas: List<Receta>):
      RecyclerView.Adapter<RecetaAdapter.RecetaViewHolder>(){
 
-    //ViewHolder, clase anidada que contiene el binding al item a mostrar : CardItem.xml
+    //ViewHolder, clase anidada que contiene el binding al item a mostrar : CardItem
     class RecetaViewHolder(private val binding: CarditemBinding):
         RecyclerView.ViewHolder(binding.root){
+
             // Función para enlazar los datos de una receta a las vistas del item
             fun bind(receta: Receta) {
                 binding.tvNombreReceta.text = receta.nombre
@@ -26,11 +32,11 @@ class RecetaAdapter(private var recetas: List<Receta>):
                     if (resourceId != 0) { // resourceId será 0 si el recurso no se encuentra
                         binding.ivImagenReceta.setImageResource(resourceId)
                     } else {
-                        // Manejar el caso en que el recurso no se encuentra (ej. poner una imagen por defecto)
-                        binding.ivImagenReceta.setImageResource(R.drawable.salado) // Asegúrate de tener una imagen por defecto
+                       //si no se encuentra, sera la imagen salado por defecto
+                        binding.ivImagenReceta.setImageResource(R.drawable.salado)
                     }
                 } else {
-                    // Manejar el caso en que imagenReceta es null en el JSON
+                    // null en el JSON, igual, salado por defecto
                     binding.ivImagenReceta.setImageResource(R.drawable.salado)
                 }
                 // La flecha (ivFlechaAmarilla) no necesita ser actualizada por los datos de la receta
@@ -62,7 +68,7 @@ class RecetaAdapter(private var recetas: List<Receta>):
         }
     }
 
-    //Obtiene el tamaño de la lista recetas (constructor clase)
+    //Obtiene el tamaño de la lista recetas (creada en el constructor de la clase)
     override fun getItemCount(): Int {
         return recetas.size
     }

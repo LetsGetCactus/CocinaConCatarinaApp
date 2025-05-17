@@ -9,7 +9,6 @@
     <string name="Sonido">Son on/off</string>
     <string name="Registro">Rexistrarse</string>
     <string name="Login">Iniciar sesion</string>
-    <string name="buscar">Buscar</string>
     <string name="bienvenida">Benvido a Cocina con Catarina!!</string>
     <string name="introduce_tu_nombre">Introduce o teu nome</string>
     <string name="tituloRegistro">Por favor, introduce os teus datos para rexistrarte</string>
@@ -21,4 +20,6 @@
     <string name="editar">Editar</string>
     <string name="Reset">Resetear</string>
     <string name="descripcion">...</string>
+    <string name="Modificar" >Modificar</string>
+    <string name="exit">Saír da sesión</string>
 </resources>

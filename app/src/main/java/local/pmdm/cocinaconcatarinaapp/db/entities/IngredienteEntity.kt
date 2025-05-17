@@ -1,9 +1,12 @@
-package local.pmdm.cocinaconcatarinaapp.repository.room
+package local.pmdm.cocinaconcatarinaapp.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
+/*
+ Modelo de datos de la BBDD local para Ingrediente
+ */
 @Entity(
     tableName = "ingredientes",
     primaryKeys = ["recetaId", "nombre"],

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/rosaPaloClaro"
+
+        >
+
+        <EditText
+            android:id="@+id/et_modificar_cantidad"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textSize="24sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_modificar_unidad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="italic"
+            android:textColor="@color/verdeOscuroContraste"
+            tools:text="1.5"
+            />
+
+        <TextView
+            android:id="@+id/tv_modificar_unidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_modificar_ingrediente_nombre"
+            app:layout_constraintStart_toEndOf="@+id/et_modificar_cantidad"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="kg"
+            android:textColor="@color/morado"
+          />
+
+        <TextView
+            android:id="@+id/tv_modificar_ingrediente_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_modificar_unidad"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Harina de Trigo Integral"
+            android:textColor="@color/morado"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

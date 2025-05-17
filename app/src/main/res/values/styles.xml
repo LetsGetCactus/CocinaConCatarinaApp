@@ -31,6 +31,7 @@
         <item name="backgroundTint">@color/rosaPaloClaro</item>
         <item name="android:textColor">@color/marronMuyOscuro</item>
     </style>
+
     <style name="boton2" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="cornerRadius">20dp</item>
         <item name="backgroundTint">@color/marronMuyOscuro</item>
@@ -42,9 +43,11 @@
         <!-- Fondo de la tarjeta -->
         <item name="cardBackgroundColor">@color/camelClaro</item>
         <item name="android:padding">0dp</item>
+
         <!-- Bordes redondeados -->
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
         <item name="cardCornerRadius">12dp</item>
+
         <!-- Elevación y sombra -->
         <item name="cardElevation">8dp</item>
         <item name="cardUseCompatPadding">false</item>
@@ -54,13 +57,7 @@
         <item name="strokeColor">@color/beisClaro</item>
         <item name="strokeWidth">10dp</item>
 
-        <!-- Texto-->
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/marronMuyOscuro</item>
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
-
 
     <!-- Texto oscuro sobre fondo claro -->
     <style name="textoPrincipalOscuro">

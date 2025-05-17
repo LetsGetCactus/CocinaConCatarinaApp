@@ -1,10 +1,11 @@
-package local.pmdm.cocinaconcatarinaapp.repository.room
+package local.pmdm.cocinaconcatarinaapp.db.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /*
-Para usar Room necesitamos una Entidad: clase de datos que representara las tablas de la BBDD SQLite local
+Para usar Room necesitamos una Entidad:
+clase de datos que representara las tablas de la BBDD SQLite local
 
 Define la entidad para Receta
  */

@@ -6,7 +6,9 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import local.pmdm.cocinaconcatarinaapp.db.entities.UserEntity
 
-// DAO para interactuar con la tabla de usuarios (UserEntity)
+/*
+ DAO para interactuar con la tabla de usuarios (UserEntity)
+ */
 @Dao
 interface UserDAO {
     // Inserta un nuevo usuario en la base de datos.

@@ -1,4 +1,4 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -19,13 +19,16 @@ import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.FragmentFavoritosBinding
 import local.pmdm.cocinaconcatarinaapp.db.AppDatabase
 import local.pmdm.cocinaconcatarinaapp.db.dao.RecetaFavoritaDAO
-import local.pmdm.cocinaconcatarinaapp.db.data.FavoritosItemListener
+import local.pmdm.cocinaconcatarinaapp.ui.adapters.FavoritosItemListener
 import local.pmdm.cocinaconcatarinaapp.db.data.RecetasDataSource
 import local.pmdm.cocinaconcatarinaapp.model.Receta
 import local.pmdm.cocinaconcatarinaapp.ui.adapters.FavoritosAdapter
 
 
-
+/*
+* Fragment para mostrar las recetas favoritas del usuario.
+* Recibe una lista de recetas previamente seleccionadas por el user y muestra cada una en un item.
+ */
 class Favoritos : Fragment(), FavoritosItemListener {
     private var _binding: FragmentFavoritosBinding? = null
     private val binding get()= checkNotNull(_binding){
@@ -36,7 +39,7 @@ class Favoritos : Fragment(), FavoritosItemListener {
     private lateinit var allRecetas: List<Receta>
     private lateinit var recetaFavDao: RecetaFavoritaDAO //Lee los favoritos de la BBDD
 
-    //SharedPreferences. Obtienen el user logueado
+    //SharedPreferences. Obtienen el user logueado y sus datos
     private lateinit var sPrefs: SharedPreferences
     private var userEnSesion: String? = null // Variable para almacenar el email del usuario logueado
     private val S_PREFS = "preferenciasUser" // Nombre del archivo de SharedPreferences
@@ -44,7 +47,9 @@ class Favoritos : Fragment(), FavoritosItemListener {
 
     private lateinit var favoritosAdapter: FavoritosAdapter
 
-    //se llama al crear el fragment
+    /*
+     * Se llama al crear el fragment
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -52,6 +57,9 @@ class Favoritos : Fragment(), FavoritosItemListener {
         }
     }
 
+    /*
+     * Se llama al crear la vista del fragment*
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,6 +68,9 @@ class Favoritos : Fragment(), FavoritosItemListener {
         return binding.root
     }
 
+    /*
+     * Se llama cuando la vista del fragment YA HA SIDO creada
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -99,11 +110,18 @@ class Favoritos : Fragment(), FavoritosItemListener {
 
     }
 
+    /*
+     * Se llama cuando el fragment se destruye, liberamos recursos
+     */
     override fun onDestroy() {
         super.onDestroy()
         _binding=null
     }
 
+    /*
+     * Se llama cuando se hace clic en un item de la lista de favoritos.
+     * Navega al itemReceta correspondiente.
+     */
     override fun onItemClick(receta: Receta){
            val navegacion=FavoritosDirections.actionFavoritosToItemReceta(
                idReceta = receta.id,

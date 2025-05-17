@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beisClaro"
-    tools:context=".ui.fragmentos.Home">
+    tools:context=".ui.fragments.Home">
 
     <ImageView
         android:id="@+id/imgPrincipal"

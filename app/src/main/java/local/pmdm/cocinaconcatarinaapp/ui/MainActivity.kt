@@ -1,13 +1,13 @@
 package local.pmdm.cocinaconcatarinaapp.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -20,7 +20,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import local.pmdm.cocinaconcatarinaapp.R
 import local.pmdm.cocinaconcatarinaapp.databinding.ActivityMainBinding
 import androidx.core.view.WindowCompat
@@ -29,8 +28,11 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.core.content.edit
 
-
+/*
+* Clase principal de la app
+ */
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -63,17 +65,65 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController = navHostFragment.navController
 
+        /*
+         * Configuración de la barra de acción y el menú de navegación
+         */
         appBarConfiguration = AppBarConfiguration(
             setOf(// IDs de los destinos de nivel superior en tu NavGraph
                 R.id.home,
                 R.id.favoritos,
                 R.id.loginUsuario
+
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 //        bottomNavigationView.setupWithNavController(navController) //Lo eliminamos de aqui porque a veces genera conflicto y no se mueve al fragment al hacer clic sobre el
 
+        /*
+         * Configuración de la navegación del menú lateral (Drawer)
+         */
+        navView.setNavigationItemSelectedListener {
+            seleccion ->
+
+            val prefs = getSharedPreferences("UsuarioPrefs", Context.MODE_PRIVATE)
+            val userId = prefs.getString("userId", null)
+
+            when (seleccion.itemId) {
+                R.id.home -> {
+                    if(userId==null){
+                        Toast.makeText(this,"Necesita iniciar sesión",Toast.LENGTH_SHORT).show()
+                        false
+                    }else {
+                        navController.navigate(R.id.home)
+                        true
+                    }
+                }
+                R.id.favoritos -> {
+                    if(userId==null){
+                        Toast.makeText(this,"Necesita iniciar sesión",Toast.LENGTH_SHORT).show()
+                        false
+                    }else {
+                        navController.navigate(R.id.favoritos)
+                        true
+                    }
+                }
+                R.id.loginUsuario -> {
+                    navController.navigate(R.id.loginUsuario)
+                    true
+                }
+                R.id.logoutUsuario ->{
+                cerrarSesion()
+                true
+                }
+                else ->false
+            }
+
+        }
+
+        /*
+         * Configuración de la navegación de la barra inferior
+         */
         bottomNavigationView.setOnItemSelectedListener {
             item ->
             when (item.itemId) {
@@ -98,6 +148,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        /*
+         * Configuración de la navegación de la toolbar
+         */
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -121,37 +174,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        //ELIMINAMOS todo esto porque inflaremos la busqueda en ListadoRecetas
-        // menuInflater.inflate(R.menu.menu_superior, menu)
+    /*
+     * Metodo para cerrar sesión del usuario y volver a la pantalla de login
+     */
+    private fun cerrarSesion() {
+        // Limpiar SharedPreferences
+        val prefs = getSharedPreferences("UsuarioPrefs", Context.MODE_PRIVATE)
+        prefs.edit { clear() }
 
-
-//        val searchItem = menu.findItem(R.id.search)
-//        val searchView = searchItem?.actionView as? SearchView
-//        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                if (!query.isNullOrEmpty()) {
-//                    Snackbar.make(binding.root, "Buscar: $query", Snackbar.LENGTH_SHORT).show()
-//                    searchView.clearFocus()
-//                    searchItem?.collapseActionView()
-//                    return true
-//                }
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                return true
-//            }
-//        })
-        return true
+        // Redirigir al usuario a la pantalla de login
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
+
+    /*
+     * Metodo para controlar los clicks en la toolbar
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            //ELMINAMOS esto porque hemos configurado esto en ListadoRecetas, donde se mostrara la barra de busqueda finalmente
-//            R.id.search -> true // La lógica de búsqueda está en el listener
-
-
             android.R.id.home -> {
                 navController.navigateUp(appBarConfiguration) || super.onOptionsItemSelected(item)
             }
@@ -159,21 +201,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*
+     * Metodo para controlar el botón de retroceso
+     */
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    //Metodos para la radio (ExoPlayer)
-    //Inicializar ExoPlayer
+    /*
+     * Metodo para inicializar el reproductor de radio
+     */
     private fun inicializarRadio(){
-        if(radio==null){
-            radio= ExoPlayer.Builder(this).build()
-            Log.d("ExoPlayer", "Inicializando ExoPlayer")
-        }
+       radio= ExoPlayer.Builder(this).build()
+        Log.d("ExoPlayer", "Inicializando ExoPlayer")
+
 
         val streaming= MediaItem.fromUri(rockFM) //Establecemos RockFm como url a reproducir
         radio?.setMediaItem(streaming) //se la asignamos a la radio/reproductor
         radio?.prepare() //No reproduce, solo carga en MediaItem (streaming) y lo prepara
+        Log.d("ExoPlayer", "ExoPlayer inicializado")
+
     }
 
     //Play/Pause al clicar en sonido

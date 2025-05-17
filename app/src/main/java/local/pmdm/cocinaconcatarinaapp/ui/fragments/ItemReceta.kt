@@ -1,6 +1,5 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -13,7 +12,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.ListView
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,23 +27,29 @@ import local.pmdm.cocinaconcatarinaapp.db.data.RecetasDataSource
 import local.pmdm.cocinaconcatarinaapp.db.entities.RecetasFavoritasEntity
 import local.pmdm.cocinaconcatarinaapp.model.Receta
 
+/*
+ * Fragment para mostrar los detalles de una receta seleccionada.
+ * Muestra la imagen, ingredientes, pasos y permite marcar como favorita o modificarla (falta implementacion)
+ */
 class ItemReceta : Fragment() {
     private var _binding: FragmentItemRecetaBinding? = null
     private val binding
         get() = checkNotNull(_binding) {
             "La vista no ha sido inicializada"
         }
+
     private val rSource = RecetasDataSource()// Carga las recetas del JSON
     private lateinit var recetaFavDAO: RecetaFavoritaDAO //interactuar con la tabla de favoritos en la BDD
     private lateinit var sPrefs: SharedPreferences    // SharedPreferences para obtener el email del usuario logueado
-    private var userEnSesion: String? = null // Variable para almacenar el email del usuario logueado
+    private var userEnSesion: String? =
+        null // Variable para almacenar el email del usuario logueado
 
     // Variable para mantener una referencia a la receta que se está mostrando
     private var currentReceta: Receta? = null
 
-    private val args: ItemRecetaArgs by navArgs() //Safe Args
+    private val args: ItemRecetaArgs by navArgs() //Safe Args para obtener el ID de la receta
 
-    //Nombres para SharedPreferences -
+    //SharedPreferences. Obtienen el user logueado y sus datos
     private val S_PREFS = "preferenciasUser" // Nombre del archivo de SharedPreferences
     private val USER_EMAIL = "loggedInUserEmail" //clave user
 
@@ -113,7 +117,7 @@ class ItemReceta : Fragment() {
             }
 
             // 2. Listado ingredientes
-                val ingredientes = currentReceta!!.ingredientes.map { ingrediente ->
+            val ingredientes = currentReceta!!.ingredientes.map { ingrediente ->
                 val cantidad = ingrediente.cantidad?.toString() ?: "A ojo"
                 val unidad = ingrediente.unidad?.toString() ?: " sin pasarse"
                 "$cantidad $unidad ${ingrediente.nombre}"
@@ -141,36 +145,50 @@ class ItemReceta : Fragment() {
             binding.tvPasosReceta.text = pasosReceta
 
 
-
             // 5. Configurar el OnClickListener para el botón de favorito
-             binding.ibHacerFavorito.setOnClickListener {
+            binding.ibHacerFavorito.setOnClickListener {
                 // Asegurarse de que tenemos la receta y el email del usuario logueado
                 val receta = currentReceta
                 val userEmail = userEnSesion
 
                 // Solo procedemos si hay una receta cargada Y un usuario logueado
                 if (receta != null && userEmail != null) {
-                     CoroutineScope(Dispatchers.IO).launch { // Ejecutar en hilo de IO
+                    CoroutineScope(Dispatchers.IO).launch {
                         // Verificar el estado actual de favorito en la base de datos
-                        val isCurrentlyFavorite = recetaFavDAO.isRecipeFavoriteForUser(userEmail, receta.id)
+                        val isCurrentlyFavorite =
+                            recetaFavDAO.isRecipeFavoriteForUser(userEmail, receta.id)
 
                         if (isCurrentlyFavorite) {
                             // Si ya es favorito, eliminar de favoritos
                             val favoriteEntity = RecetasFavoritasEntity(userEmail, receta.id)
                             recetaFavDAO.deleteFavoriteRecipe(favoriteEntity)
 
-                            withContext(Dispatchers.Main) { // Volver al hilo principal para mostrar Toast
-                                Toast.makeText(requireContext(), "Eliminado de favoritos.", Toast.LENGTH_SHORT).show()
-                                Log.d("Favoritos", "Receta ${receta.id} eliminada de favoritos para ${userEmail}")
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Eliminado de favoritos.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                Log.d(
+                                    "Favoritos",
+                                    "Receta ${receta.id} eliminada de favoritos para ${userEmail}"
+                                )
                             }
                         } else {
                             // Si no es favorito, añadir a favoritos
                             val favoriteEntity = RecetasFavoritasEntity(userEmail, receta.id)
                             recetaFavDAO.insertFavoriteRecipe(favoriteEntity)
 
-                            withContext(Dispatchers.Main) { // Volver al hilo principal para mostrar Toast
-                                Toast.makeText(requireContext(), "¡Añadido a favoritos!", Toast.LENGTH_SHORT).show()
-                                Log.d("Favoritos", "Receta ${receta.id} añadida a favoritos para ${userEmail}")
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "¡Añadido a favoritos!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                Log.d(
+                                    "Favoritos",
+                                    "Receta ${receta.id} añadida a favoritos para ${userEmail}"
+                                )
                             }
                         }
                     }
@@ -178,26 +196,28 @@ class ItemReceta : Fragment() {
                     // Esto puede pasar si el botón está visible pero no hay usuario logueado
                     Log.e("User login", "Error: Click en favorito sin receta o usuario logueado.")
                     if (userEmail == null) {
-                        Toast.makeText(requireContext(), "Inicia sesión para marcar favoritos.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            requireContext(),
+                            "Inicia sesión para marcar favoritos.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
 
 
-
-    }
-        //        else {
-//            // Manejar el caso en que la receta no se encuentra (debería ser raro con Safe Args y IDs válidos)
-//            Log.e(LOG_TAG, "Receta con ID $idReceta no encontrada en la lista cargada.")
-//            // Puedes mostrar un mensaje de error al usuario o cerrar el fragmento
-//            Toast.makeText(requireContext(), "Error al cargar la receta.", Toast.LENGTH_SHORT).show()
-//            findNavController().popBackStack() // Opcional: retroceder si no se encuentra la receta
-//        }
-
-
+            // Configurar el OnClickListener para el botón de modificación
+            binding.ibModificar.setOnClickListener {
+                // Navegar al fragmento de modificación de receta
+                val action = ItemRecetaDirections.actionItemRecetaToModificarReceta(idReceta)
+                findNavController().navigate(action)
+            }
+        }
     }
 
-    // Calculamos la altura de un ListView
+    /*
+     * Establece la altura correcta para el ListView.
+     */
     private fun setAlturaListView(lView: ListView) {
         val listAdapter: ListAdapter = lView.adapter ?: return
         var alturaTotal = 0
@@ -205,7 +225,7 @@ class ItemReceta : Fragment() {
 
         //Calculamos la alturaTotal sumando la altura de cada item
         for (i in 0 until numeroIngredientes) {
-            val ingrediente: View =listAdapter.getView(i, null, lView)
+            val ingrediente: View = listAdapter.getView(i, null, lView)
             ingrediente.measure(0, 0)
             alturaTotal += ingrediente.measuredHeight
         }
@@ -224,7 +244,7 @@ class ItemReceta : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-
+        _binding=null
     }
 
 
