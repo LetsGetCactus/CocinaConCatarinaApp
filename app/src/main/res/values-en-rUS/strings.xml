@@ -9,7 +9,6 @@
     <string name="BtSaladas">Savoury Recepies</string>
     <string name="Favoritos">Favourites</string>
     <string name="Sonido">Sound on/off</string>
-    <string name="buscar">Search</string>
     <string name="bienvenida">Welcome to Cocina con Catarina!!</string>
     <string name="introduce_tu_nombre">Insert your name</string>
     <string name="tituloRegistro">Please,insert your data to register</string>
@@ -21,4 +20,6 @@
     <string name="editar">Editar</string>
     <string name="Reset">Reset</string>
     <string name="descripcion">...</string>
+    <string name="Modificar" >Modify</string>
+    <string name="exit">Logout user</string>
 </resources>

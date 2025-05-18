@@ -24,6 +24,8 @@
     <string name="editar">Editar</string>
     <string name="Reset">Resetear</string>
     <string name="descripcion">...</string>
+    <string name="Modificar" >Modificar</string>
+    <string name="exit">Salir de la sesión</string>
 
 
 </resources>

@@ -1,4 +1,4 @@
-package local.pmdm.cocinaconcatarinaapp.db.data
+package local.pmdm.cocinaconcatarinaapp.ui.adapters
 
 import local.pmdm.cocinaconcatarinaapp.model.Receta
 

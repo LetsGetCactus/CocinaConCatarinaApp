@@ -1,6 +1,7 @@
 package local.pmdm.cocinaconcatarinaapp.model
 
 /*
+POJO
 Define al usuario de la app, su id de usuario, nomrbe y aquellas recetas que haya dado favoritos
  */
 data class Usuario(

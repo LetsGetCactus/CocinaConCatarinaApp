@@ -1,4 +1,4 @@
-package local.pmdm.cocinaconcatarinaapp.ui.fragmentos
+package local.pmdm.cocinaconcatarinaapp.ui.fragments
 
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -10,8 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
-import android.widget.Toast.makeText
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,18 +22,21 @@ import local.pmdm.cocinaconcatarinaapp.databinding.FragmentRegistroUsuarioBindin
 import local.pmdm.cocinaconcatarinaapp.db.AppDatabase
 import local.pmdm.cocinaconcatarinaapp.db.dao.UserDAO
 import local.pmdm.cocinaconcatarinaapp.db.entities.UserEntity
-import local.pmdm.cocinaconcatarinaapp.model.Usuario
 import java.util.regex.Pattern
 
-
+/*
+ * Fragment para el registro de usuarios
+ */
 class RegistroUsuario : Fragment() {
     private var _binding: FragmentRegistroUsuarioBinding? = null
     private val binding get() = checkNotNull(_binding){
         "No se a incializado la vista"
     }
     private val args:RegistroUsuarioArgs by navArgs() //Para safe args
+
     // Instancia del UserDAO para interactuar con la tabla de usuarios
     private lateinit var userDao: UserDAO
+
     // SharedPreferences para guardar el email del usuario logueado después del registro
     private lateinit var sharedPreferences: SharedPreferences
     //Nombres para SharedPreferences -
@@ -84,23 +85,23 @@ class RegistroUsuario : Fragment() {
             val pass2 = binding.etContraseA2.text.toString().trim()
             val correo = binding.etCorreo.text.toString().trim()
             if (pass1.isNotBlank() && pass1.equals(pass2) && validarEmail(correo) && user.isNotEmpty()) {
-                val passwordHash = pass1 // ¡Esto es solo un placeholder!
+                val password = pass1 //Esto es solo un placeholder
 
                 // Las operaciones de base de datos (inserción) deben ejecutarse en una corrutina
-                CoroutineScope(Dispatchers.IO).launch { // Inicia una corrutina en el hilo de IO (entrada/salida)
+                CoroutineScope(Dispatchers.IO).launch { // Inicia una corrutina
                     // Crear una nueva entidad de usuario
                     val newUser = UserEntity(
                         correo = correo, // Usamos el email como clave primaria
                         nombre = user,
-                        contrasenha = passwordHash // Debería ser el hash seguro
+                        contrasenha = password
                     )
 
                     // Intentar insertar el nuevo usuario en la base de datos
                     // insertUser retorna el rowId (Long) del nuevo usuario insertado,
-                    // o -1L si la inserción falló debido a conflicto (ej. email ya existe) con OnConflictStrategy.IGNORE
+                    // o -1L si la inserción falló
                     val result = userDao.insertUser(newUser)
 
-                    withContext(Dispatchers.Main) { // Cambia al hilo principal para actualizar la UI (mostrar Toast, navegar)
+                    withContext(Dispatchers.Main) {
                         if (result != -1L) { // Si la inserción fue exitosa (Room retorna el rowId > -1)
                             Toast.makeText(
                                 requireContext(),
@@ -109,10 +110,10 @@ class RegistroUsuario : Fragment() {
                             ).show()
                             Log.d(TAG, "Nuevo usuario registrado: ${newUser.correo}")
 
-                            // Opcional: Guardar el email del nuevo usuario logueado automáticamente después del registro
+                            // Guardar el email del nuevo usuario logueado automáticamente después del registro
                             with(sharedPreferences.edit()) {
                                 putString(USER_EMAIL, newUser.correo) // Guarda el email del nuevo usuario
-                                apply() // Aplica los cambios de forma asíncrona
+                                apply()
                             }
                             Log.d(TAG, "Usuario logueado automáticamente después del registro: ${newUser.correo}")
 
@@ -133,7 +134,10 @@ class RegistroUsuario : Fragment() {
             }
         }
     }
-    //Funcion para validar emails
+
+    /*
+    * Metodo para validar el email
+     */
     private fun validarEmail(email:String): Boolean{
         val pattern= Pattern.compile("[a-z0-9._-]+@[a-z]+\\.+[a-z]{2,}")
         return pattern.matcher(email).matches()

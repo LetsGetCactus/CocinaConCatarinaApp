@@ -8,6 +8,9 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 import local.pmdm.cocinaconcatarinaapp.db.entities.RecetasFavoritasEntity
 
+/*
+* Interfaz de acceso a datos (DAO) para la entidad RecetasFavoritas
+ */
 @Dao
 interface RecetaFavoritaDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

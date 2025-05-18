@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <group android:menuCategory="system"
+       android:orderInCategory="1">
     <item
         android:id="@+id/loginUsuario"
         android:icon="@drawable/user_icono"
         android:title="@string/Login" />
+
+       <item
+           android:id="@+id/logoutUsuario"
+           android:icon="@drawable/baseline_exit_to_app_24"
+           android:title="@string/exit"
+           />
+   </group>
     <item
         android:id="@+id/favoritos"
         android:icon="@drawable/fav_icono"

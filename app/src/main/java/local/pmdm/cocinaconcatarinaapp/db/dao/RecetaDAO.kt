@@ -2,10 +2,10 @@ package local.pmdm.cocinaconcatarinaapp.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import local.pmdm.cocinaconcatarinaapp.repository.room.RecetaEntity
+import local.pmdm.cocinaconcatarinaapp.db.entities.RecetaEntity
 
 /*
-Interfaz para interactuar con las tablas de ROOM
+Interfaz para interactuar con las tablas de ROOM para recetas
  */
 @Dao
 interface RecetaDAO {

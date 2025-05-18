@@ -6,7 +6,10 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.ColumnInfo
 
-// Entidad para representar una Receta Favorita asociada a un Usuario
+
+/*
+ Modelo de datos de la BBDD local para una receta favorita en la sesion de un usuario
+ */
 @Entity(
     tableName = "recetasFavoritas",
     // Definimos una clave primaria compuesta por userEmail y recipeId

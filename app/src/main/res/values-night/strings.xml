@@ -11,4 +11,6 @@
     <string name="introduce_tu_email" >Introduce tu email</string>
     <string name="editar">Editar</string>
     <string name="descripcion">...</string>
+    <string name="Modificar" >Modificar</string>
+    <string name="exit">Salir de la sesión</string>
 </resources>
