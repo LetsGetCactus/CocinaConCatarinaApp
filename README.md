@@ -11,19 +11,18 @@ Al tiempo que preparas una receta puedes escuchar música directamente desde la 
     
 ## Estructura:
 La app tiene una arquitectura modular que se divide en 4 carpetas:
-- db: Contiene todos los datos referentes/necesarios para la BBDD local, mediante `Room`:
+- **db**: Contiene todos los datos referentes/necesarios para la BBDD local, mediante `Room`:
     - DAOs: Interfaces para interactuar con la BBDD.
-    - AppDataBase: Clase principal para trabajar con la BBDD. Contiene `anotations`, un listado de `entities` que conforman la BBDD local, y los métodos de acceso a los DAos
-    - FavoritosItemListener: Interfaz para manejas los eventos de click en los items que muestra el RecyclerView `Favoritos`
-    - RecetasDataSource: Clase que lee el archivo recetas.json mediante la librería Gson y convierte su contenido en objetos de tipo `Receta`
-- model: Lógica de negocio
-    - POJOs (Ingrediente, Paso, Receta y usuario): Representan las estructuras de los diferentes datos a utilizar en la app
-    - Repositorios (Usuario y Receta): Abstracciones del acceso a los datos para `Usuario` y `Recetas`
-- repository.room: (Debería estar dentro del paquete db)
-    - Entitys: Entidades de la BBDD. Definen sus tablas por medio de clases con anotaciones
-- ui: Interfaz de usuario.
-    - Adapters: Para los RecyclerView (`Favoritos` y `Receta`). Gestionan como se mostrarán un listado de items de forma eficiente.
-    - Fragmentos (`Favoritos`, `Home`, `ItemReceta`, `ListadoRecetas`, `LoginUsuario` y `RegistroUsuario`): Pantallas de la app.
+    - `AppDataBase`: Clase principal para trabajar con la BBDD. Contiene `anotations`, un listado de `entities` que conforman la BBDD local, y los métodos de acceso a los DAos
+    - Entities: Entidades de la BBDD. Definen sus tablas por medio de clases con anotaciones.
+    - data: `RecetasDataSource`: Clase que lee el archivo recetas.json mediante la librería Gson y convierte su contenido en objetos de tipo `Receta`
+- **model**: Lógica de negocio
+    - POJOs (Ingrediente, Paso, Receta y usuario): Representan las estructuras de los diferentes datos a utilizar en la app.
+    - Repositorios (Receta y RecetaImpl): Abstracciones del acceso a los datos para `Recetas`
+- **ui**: Interfaz de usuario.
+    - Adapters: Para los RecyclerView (`Favoritos` , `Receta` y `ModificarReceta`), gestionan como se mostrarán un listado de items de forma eficiente. Y para `FavoritosItemListener`, interfaz para manejas los eventos de click en los items que muestra el RecyclerView `Favoritos`
+    - Fragmentos (`Favoritos`, `Home`, `ItemReceta`, `ListadoRecetas`, `LoginUsuario`, `ModificarReceta` y `RegistroUsuario`): Pantallas de la app.
+    - viewmodel: Incluyes el ViewModel y ViewModelFactory para los datos que se muestran en ModificarRecetas 
     - MainActivity: Actividad principal (y única, single activity) que contendrá todos los fragmentos
     
 ## Contiene:
@@ -49,12 +48,13 @@ La app tiene una arquitectura modular que se divide en 4 carpetas:
      Almacena pequeños datos como el correo de usuario en el loging, o si se ha iniciado la sesión, para mejorar su experiencia
  16. Recursos de menu ( res> menu ):
      Para facilitar la navegación entre fragmentos se ha implementado un navigation drawer y un bottom navigation menu
+ 17. Uso de ViewModel y ViewModelFactory:
+     En la obtención y visualización de los datos que se muestran en `ModificarRecetas` (FALTA IMPLEMENTAR LOS CAMBIOS, solo     funcionan reset y cancelar) 
 
 
 ##
 ### Opciones a implementar en un futuro (mejoras)
-- Mover las clases Entity a la carpeta db!!
-- Viewmodel
+- Viewmodel (en toda la app) y acabar de implementar en ModificarReceta: guardado receta modificada para el usuario
 - Dark mode
 - Barra de búsqueda
 - Fragmento ModificarReceta, para que el usuario pueda modificar la cantidad de cada ingrediente en sus recetas
