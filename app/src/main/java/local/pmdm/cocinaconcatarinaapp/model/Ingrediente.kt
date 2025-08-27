@@ -1,7 +1,7 @@
 package local.pmdm.cocinaconcatarinaapp.model
 
 /*
-POJO (Plain Old Java Object)
+POJO (Plain Old Java Object)  Aunque estemos usando Kotlin, es el equivalente
 Representa los ingredientes que se integraran en las diferentes recetas
  */
 data class Ingrediente(
